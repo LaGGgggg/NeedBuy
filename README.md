@@ -6,6 +6,12 @@
 
 Online store on django.
 
+# Requirements
+
+python >= **3.10**<br>
+python packages: [requirements.txt](requirements.txt) (How install in "How to start the project?")<br>
+[git](https://git-scm.com/downloads) (For project installation)
+
 # How to start the project?
 
 ### 1. Clone this repository
@@ -42,7 +48,13 @@ python manage.py runserver
 
 # Current project structure
 
-- Home page
-  - Buttons
-    - Register
-    - Login
+Soon......
+
+# Contacts
+
+For any questions:<br>
+TulNik0@yandex.ru
+
+# License
+
+#### [LICENSE.md](LICENSE.md)
