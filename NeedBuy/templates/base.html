@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css_styles/main.css' %}">
+    <title>Need buy</title>
+</head>
+<body>
+    <h1>{% block header %}{% endblock header%}</h1>
+    <div>{% block content %}{% endblock content %}</div>
+    <footer>
+        <! time, format: "3 June 2022 Friday 08:06AM" >
+        {% now 'j F Y l h:iA' %}
+        Support: <address>TulNik0@yandex.ru</address>
+    </footer>
+</body>
+</html>

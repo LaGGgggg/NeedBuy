@@ -1,2 +1,2 @@
 release: python3 NeedBuy/manage.py migrate
-web: gunicorn NeedBuy.app_main.wsgi --log-file -
+web: waitress-serve --listen=*:8000 NeedBuy/app_main/wsgi.py:application
