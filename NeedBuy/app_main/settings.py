@@ -29,6 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Danger! If you need to set DEBUG=False, type empty environment variable. It is needed,
+# because no empty string in bool(), return True value.
 DEBUG = bool(env('DEBUG'))
 
 ALLOWED_HOSTS = []
@@ -43,8 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home_page_app.apps.HomePageAppConfig',
     'debug_toolbar',
+    'NeedBuy.home_page_app.apps.HomePageAppConfig',
 ]
 
 MIDDLEWARE = [
