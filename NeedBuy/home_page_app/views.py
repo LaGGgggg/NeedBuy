@@ -10,3 +10,7 @@ def view_index(request):
         case 'GET':
 
             return render(request, 'home_page_app/index.html')
+
+        case _:
+
+            return render(request, 'error.html')

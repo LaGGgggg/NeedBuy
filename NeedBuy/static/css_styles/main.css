@@ -1,14 +1,21 @@
 div {
     /* this block automatically wraps text in all browsers */
-    overflow-wrap:break-word;
-    word-wrap:break-word;
-    -webkit-hyphens:auto;
-    -ms-hyphens:auto;
-    hyphens:auto;
-    hyphenate-limit-chars:10 4 4;
-    margin-right:20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    hyphenate-limit-chars: 10 4 4;
+    margin-right: 20px;
 
     /* another settings */
-    margin:20px 0px 20px 40px;
+    margin: 20px 0px 20px 40px;
     font-family: verdana;
+}
+button {
+    border-radius: 20px;
+    background-color: #8130EC;
+    color: white;
+    width: 135px;
+    height: 30px;
 }

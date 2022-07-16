@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block header %}
+    Something went wrong....
+{% endblock header %}
+{% block content %}
+    <button onclick="location.href='{% url 'main' %}'">Go to main page</button>
+{% endblock content %}
+</html>
