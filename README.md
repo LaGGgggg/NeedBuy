@@ -9,7 +9,7 @@ Online store on django.
 # Requirements
 
 python >= **3.10**<br>
-python packages: [requirements.txt](requirements.txt) (How install in "How to start the project?")<br>
+python packages: [requirements.txt](NeedBuy/requirements.txt) (How install in "How to start the project?")<br>
 [git](https://git-scm.com/downloads) (For project installation)
 
 # How to start the project?
