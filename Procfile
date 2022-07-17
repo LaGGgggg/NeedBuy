@@ -1,2 +1,2 @@
-release: python3 NeedBuy/manage.py migrate
-web: gunicorn NeedBuy.app_main.wsgi --log-file -
+release: python3 manage.py migrate
+web: gunicorn app_main.wsgi --log-file -
