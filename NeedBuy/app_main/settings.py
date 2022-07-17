@@ -148,10 +148,10 @@ INTERNAL_IPS = []
 
 
 # If user is staff, show debug_toolbar
-def show_debug_toolbar(request):
-    return request.user.is_staff
+#def show_debug_toolbar(request):
+#    return request.user.is_staff
 
 
-DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': 'app_main.settings.show_debug_toolbar',
-}
+#DEBUG_TOOLBAR_CONFIG = {
+#    'SHOW_TOOLBAR_CALLBACK': 'app_main.settings.show_debug_toolbar',
+#}
