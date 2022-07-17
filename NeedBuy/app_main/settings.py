@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'home_page_app.apps.HomePageAppConfig',
+    'apps.home_page_app.apps.HomePageAppConfig',
 ]
 
 MIDDLEWARE = [
