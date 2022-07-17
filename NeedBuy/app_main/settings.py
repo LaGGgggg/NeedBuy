@@ -35,6 +35,8 @@ DEBUG = bool(env('DEBUG'))
 
 ALLOWED_HOSTS = []
 
+PROJECT_ROOT = BASE_DIR.joinpath('apps')
+
 
 # Application definition
 
@@ -46,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'apps.home_page_app.apps.HomePageAppConfig',
+    'home_page_app.apps.HomePageAppConfig',
 ]
 
 MIDDLEWARE = [
