@@ -103,7 +103,7 @@ heroku config:set SECRET_KEY= <your secret_key>  # It can be random, this is a g
 ### 8. Push project to heroku
 
 ```bash
-git push heroku main
+git subtree push --prefix NeedBuy heroku main
 ```
 
 ### 9. Setting up web dyno (Without it, you won't be able to see the site)
