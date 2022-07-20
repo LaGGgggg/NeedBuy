@@ -32,4 +32,6 @@ jobs:
         DEBUG: ''
         PROJECT_ROOT: /home/runner/work/NeedBuy/NeedBuy/apps
       run: |
+        sudo systemctl start postgresql
+        sudo systemctl enable postgresql
         python NeedBuy/manage.py test
