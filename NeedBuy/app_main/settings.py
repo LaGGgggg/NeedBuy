@@ -14,6 +14,7 @@ import environ
 import dj_database_url
 import django_heroku
 import sys
+import os
 from pathlib import Path
 
 env = environ.Env()
@@ -91,9 +92,22 @@ WSGI_APPLICATION = 'app_main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(),
-}
+if os.environ.get('GITHUB_WORKFLOW'):
+    # It for github autotests
+    DATABASES = {
+        'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'github_actions',
+           'USER': 'postgres',
+           'PASSWORD': 'postgres',
+           'HOST': '127.0.0.1',
+           'PORT': '5432',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config(),
+    }
 
 django_heroku.settings(locals())
 
