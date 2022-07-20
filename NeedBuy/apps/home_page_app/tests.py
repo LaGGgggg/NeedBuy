@@ -17,11 +17,11 @@ class HomePageAppTestCase(TestCase):
         request = self.client.get('/')
 
         self.assertTemplateUsed(request, 'home_page_app/index.html')
-        self.assertEqual(request, 200)
+        self.assertEqual(request.status_code, 200)
 
         # error.html
 
         request = self.client.get('/bad-address/')
 
         self.assertTemplateUsed(request, 'error.html')
-        self.assertEqual(request, 200)
+        self.assertEqual(request.status_code, 200)
