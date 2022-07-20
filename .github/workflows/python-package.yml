@@ -37,4 +37,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test
       run: |
+        env:
+          SECRET_KEY=django-secret-key-for-test
+          # DEBUG should be empty for false value
+          DEBUG=
+          PROJECT_ROOT=/home/runner/work/NeedBuy/NeedBuy/apps
         python NeedBuy/manage.py test
