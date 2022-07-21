@@ -173,3 +173,51 @@ INTERNAL_IPS = []
 #DEBUG_TOOLBAR_CONFIG = {
 #    'SHOW_TOOLBAR_CALLBACK': 'app_main.settings.show_debug_toolbar',
 #}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            # Format such as: ""
+            'format': '[{levelname}] [{asctime}] path - "{pathname}" function - "{funcName}" process - "{process:d}" '
+                      'thread - "{thread:d}" message - "{message}"',
+            'style': '{',
+        },
+        'simple': {
+            'format': '[{levelname}] - "{message}"',
+            'style': '{',
+        },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR.joinpath('.logs/logs.log'),
+            'formatter': 'verbose',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console', 'file', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

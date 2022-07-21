@@ -1,6 +1,7 @@
+import logging
 from django.shortcuts import render
 
-# Create your views here.
+logger = logging.getLogger(__name__)
 
 
 def view_index(request):
@@ -12,5 +13,7 @@ def view_index(request):
             return render(request, 'home_page_app/index.html')
 
         case _:
+
+            logger.error('Error request method.')
 
             return render(request, 'error.html')
