@@ -204,7 +204,7 @@ LOGGING = {
         'file': {
             'level': 'WARNING',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR.joinpath('.logs/logs.log'),
+            'filename': BASE_DIR.joinpath('logs.log'),
             'formatter': 'verbose',
         },
         'mail_admins': {

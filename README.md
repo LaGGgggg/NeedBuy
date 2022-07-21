@@ -64,19 +64,13 @@ You need to add SECRET_KEY (It can be random, this is a good [site](https://djec
 cd NeedBuy
 ```
 
-### 7. Create directory for logs
-
-```bash
-mkdir .logs
-```
-
-### 8. Run database migrations
+### 7. Run database migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### 9. Run development server
+### 8. Run development server
 
 ```bash
 heroku local -f Procfile_local
