@@ -31,12 +31,38 @@ sys.path.insert(0, str(BASE_DIR.joinpath('apps')))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# Danger! If you need to set DEBUG=False, type empty environment variable. It is needed,
-# because no empty string in bool(), return True value.
-DEBUG = bool(env('DEBUG'))
+SECRET_KEY = env('SECRET_KEY', default='unset')
+
+if SECRET_KEY == 'unset':
+
+    import logging
+
+    logger = logging.getLogger(__name__)
+
+    SECRET_KEY = os.urandom(32)
+    logger.warning('[WARNING] module - "settings.py" message - "SECRET_KEY is unset, used random" '
+                   '(created without logging module)\n')
+
+    with open('logs.log', 'a+') as logs_file:
+        logs_file.write('[WARNING] module - "settings.py" message - "SECRET_KEY is unset, used random" '
+                        '(created without logging module)\n')
+
+DEBUG = env('DEBUG', default='unset')
+
+if DEBUG == 'unset':
+
+    import logging
+
+    logger = logging.getLogger(__name__)
+
+    DEBUG = False
+    logger.warning('[WARNING] module - "settings.py" message - "DEBUG is unset, used False" '
+                   '(created without logging module)\n')
+
+    with open('logs.log', 'a+') as logs_file:
+        logs_file.write('[WARNING] module - "settings.py" message - "DEBUG is unset, used False" '
+                        '(created without logging module)\n')
 
 ALLOWED_HOSTS = []
 

@@ -51,12 +51,12 @@ pip install -r requirements.txt
 
 Create file `.env` in `NeedBuy/app_main`, such it `NeedBuy/app_main/.env`. Next, paste it in `.env`:
 ```
-SECRET_KEY=
-
-# If empty => return False, else => return True.
+SECRET_KEY=<your secret key>
 DEBUG=True
+PROJECT_ROOT=<C:\your\path\to\repository>\NeedBuy\NeedBuy\apps
 ```
 You need to add SECRET_KEY (It can be random, this is a good [site](https://djecrety.ir/).)
+and your path to repository.
 
 ### 6. Change directory
 
@@ -96,8 +96,8 @@ heroku git:remote -a <your app name>
 ### 7. Setting app environment variables
 
 ```bash
-heroku config:set DEBUG=  # Should be empty for production deploy
-heroku config:set SECRET_KEY= <your secret_key>  # It can be random, this is a good site: https://djecrety.ir/
+heroku config:set DEBUG=False
+heroku config:set SECRET_KEY=<your secret_key>  # It can be random, this is a good site: https://djecrety.ir/
 ```
 
 ### 8. Push project to heroku
