@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'base.html' %}
-{% block header %}
-    Something went wrong....
-{% endblock header %}
-{% block content %}
-    <button onclick="location.href='{% url 'main' %}'">Go to main page</button>
-{% endblock content %}
+{% load cache %}
+<!-- 31536000 = one year, error page doesn't change -->
+{% cache 31536000 error_page %}
+    {% block header %}
+        Something went wrong....
+    {% endblock header %}
+    {% block content %}
+        <button onclick="location.href='{% url 'main' %}'">Go to main page</button>
+    {% endblock content %}
+{% endcache %}
 </html>

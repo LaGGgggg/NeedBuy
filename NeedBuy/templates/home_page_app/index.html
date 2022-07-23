@@ -2,10 +2,14 @@
 <html lang="en">
 {% extends 'base.html' %}
 {% load static %}
-{% block header %}
-    Header!
-{% endblock header %}
-{% block content %}
-    Content!
-{% endblock content %}
+{% load cache %}
+<!-- 31536000 = one year, footer doesn't change -->
+{% cache 31536000 home_page %}
+    {% block header %}
+        Header!
+    {% endblock header %}
+    {% block content %}
+        Content!
+    {% endblock content %}
+{% endcache %}
 </html>
